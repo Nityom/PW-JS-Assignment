@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      #counter {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      #count {
+        font-size: 5em;
+        margin-bottom: 20px;
+      }
+
+      button {
+        font-size: 1.5em;
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="counter">
+      <h1 id="count">0</h1>
+      <button id="add">+1</button>
+      <button id="subtract">-1</button>
+      <button id="reset">Reset</button>
+    </div>
+    <script>
+      // Get elements from the DOM
+      const countEl = document.getElementById("count");
+      const addBtn = document.getElementById("add");
+      const subtractBtn = document.getElementById("subtract");
+      const resetBtn = document.getElementById("reset");
+
+      // Initialize the counter
+      let count = 0;
+
+      // Add event listeners to buttons
+      addBtn.addEventListener("click", () => {
+        count++;
+        countEl.textContent = count;
+      });
+
+      subtractBtn.addEventListener("click", () => {
+        count--;
+        countEl.textContent = count;
+      });
+
+      resetBtn.addEventListener("click", () => {
+        count = 0;
+        countEl.textContent = count;
+      });
+    </script>
+  </body>
+</html>

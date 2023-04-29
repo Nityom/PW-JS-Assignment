@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-Do-List</title>
+    <style>
+      #todo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+
+      input {
+        font-size: 1.5em;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        font-size: 1.5em;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="todo">
+      <input type="text" placeholder="Enter task..." />
+      <button>Add Task</button>
+      <ul></ul>
+    </div>
+    <script>
+      // Get elements from the DOM
+      const inputEl = document.querySelector("#todo input");
+      const addBtn = document.querySelector("#todo button");
+      const listEl = document.querySelector("#todo ul");
+
+      // Add event listener to the add button
+      addBtn.addEventListener("click", () => {
+        // Get the task from the input element
+        const task = inputEl.value.trim();
+
+        // Check if the task is not empty
+        if (task !== "") {
+          // Create a new list item
+          const li = document.createElement("li");
+          li.textContent = task;
+
+          // Add the list item to the list
+          listEl.appendChild(li);
+
+          // Clear the input element
+          inputEl.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
